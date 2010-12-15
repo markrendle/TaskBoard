@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard", "TaskBoard\TaskBoard.csproj", "{B8FF0D69-4CDF-4954-8998-6E7484B5118A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.Web", "TaskBoard.Web\TaskBoard.Web.csproj", "{17F49180-86DE-49E3-8616-08496D049394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.Web.Tests", "TaskBoard.Web.Tests\TaskBoard.Web.Tests.csproj", "{F327F7A5-DE1E-44E0-8C92-C369B0176DE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8FF0D69-4CDF-4954-8998-6E7484B5118A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FF0D69-4CDF-4954-8998-6E7484B5118A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FF0D69-4CDF-4954-8998-6E7484B5118A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FF0D69-4CDF-4954-8998-6E7484B5118A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F49180-86DE-49E3-8616-08496D049394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F49180-86DE-49E3-8616-08496D049394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F49180-86DE-49E3-8616-08496D049394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F49180-86DE-49E3-8616-08496D049394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F327F7A5-DE1E-44E0-8C92-C369B0176DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F327F7A5-DE1E-44E0-8C92-C369B0176DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F327F7A5-DE1E-44E0-8C92-C369B0176DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F327F7A5-DE1E-44E0-8C92-C369B0176DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

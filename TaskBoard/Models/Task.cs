@@ -1,0 +1,28 @@
+﻿using System;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+
+namespace TaskBoard.Models
+{
+    public class Task
+    {
+        public Task(string text) : this(text, ItemStatus.Backlog)
+        {
+        }
+
+        public Task(string text, ItemStatus status)
+        {
+            Text = text;
+            Status = status;
+        }
+        public string Text { get; set; }
+        public ItemStatus Status { get; set; }
+    }
+}

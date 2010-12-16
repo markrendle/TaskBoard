@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net;
@@ -22,13 +23,20 @@ namespace TaskBoard.ViewModels
         private readonly ReactiveCollection<TaskViewModel> _backlog;
         private readonly ReactiveCollection<TaskViewModel> _inProgress;
         private readonly ReactiveCollection<TaskViewModel> _done;
+        private readonly AcceptanceCriteriaViewModel _acceptanceCriteria;
 
         public StoryViewModel(Story story)
         {
             _story = story;
-            _backlog = new ReactiveCollection<TaskViewModel>(_story.Tasks.Where(task => task.Status == ItemStatus.Backlog).Select(task => new TaskViewModel(task)));
-            _inProgress = new ReactiveCollection<TaskViewModel>(_story.Tasks.Where(task => task.Status == ItemStatus.InProgress).Select(task => new TaskViewModel(task)));
-            _done = new ReactiveCollection<TaskViewModel>(_story.Tasks.Where(task => task.Status == ItemStatus.Done).Select(task => new TaskViewModel(task)));
+            _backlog = ReactiveCollection.Create(CreateTaskViewModels(story, ItemStatus.Backlog));
+            _inProgress = ReactiveCollection.Create(CreateTaskViewModels(story, ItemStatus.InProgress));
+            _done = ReactiveCollection.Create(CreateTaskViewModels(story, ItemStatus.Done));
+            _acceptanceCriteria = new AcceptanceCriteriaViewModel(story.AcceptanceCriteria);
+        }
+
+        public AcceptanceCriteriaViewModel AcceptanceCriteria
+        {
+            get { return _acceptanceCriteria; }
         }
 
         public ReactiveCollection<TaskViewModel> Done
@@ -80,5 +88,10 @@ namespace TaskBoard.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private static IEnumerable<TaskViewModel> CreateTaskViewModels(Story story, ItemStatus status)
+        {
+            return story.Tasks.Where(task => task.Status == status).Select(task => new TaskViewModel(task));
+        }
     }
 }

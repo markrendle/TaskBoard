@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,13 +9,17 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace TaskBoard.Extensions
+namespace TaskBoard.Models
 {
-    public static class ReactiveCollection
+    public class AcceptanceCriterion
     {
-        public static ReactiveCollection<T> Create<T>(IEnumerable<T> source)
+        public AcceptanceCriterion(string text, AcceptanceCriteriaPath path)
         {
-            return new ReactiveCollection<T>(source);
+            Text = text;
+            Path = path;
         }
+
+        public string Text { get; set; }
+        public AcceptanceCriteriaPath Path { get; set; }
     }
 }
